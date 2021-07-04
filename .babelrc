@@ -1,4 +1,4 @@
 {
-  "presets": ["@babel/preset-react"],
-  "plugins": ["@babel/plugin-proposal-class-properties"]
+  "presets": ["@babel/preset-react", "@emotion/babel-preset-css-prop"],
+  "plugins": ["@emotion/babel-plugin", "@babel/plugin-proposal-class-properties"]
 }

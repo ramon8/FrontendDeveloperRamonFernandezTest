@@ -1,2 +1,14 @@
 import * as React from "react";
-export const App = () => <h1>Wellcome 1</h1>;
+import { ThemeProvider } from "@emotion/react";
+
+import lightTheme from "./../public/theme/default";
+import darkTheme from "./../public/theme/darkTheme";
+import { GlobalStyles, Header } from "./components";
+
+export const App = () => (
+  <ThemeProvider theme={darkTheme}>
+    <GlobalStyles />
+    <Header title="Header title"></Header>
+    <h1>Wellcome 1</h1>
+  </ThemeProvider>
+);

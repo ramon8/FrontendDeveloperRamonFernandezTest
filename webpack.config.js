@@ -24,17 +24,21 @@ module.exports = {
         loader: "source-map-loader",
       },
       {
-        test: /\.css$/,
-        loader: "css-loader",
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        // type: "asset/resource",
+        use: {
+          loader: "file-loader",
+        },
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.html"),
-    }),
-    new MiniCssExtractPlugin({
-      filename: "./src/yourfile.css",
     }),
   ],
 };

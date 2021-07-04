@@ -1,13 +1,15 @@
 import { Theme } from "../../../src/types";
-import { ColorTypes } from "./colors";
+import { colorTypes } from "./colors";
 import { Fonts } from "./fonts/fonts";
-import logo from "./logo.svg";
+import logoPrimary from "./logoPrimary.svg";
+import logoSecondary from "./logoSecondary.svg";
 
 const theme: Partial<Theme> = {
   id: "default",
-  colors: ColorTypes,
+  colors: colorTypes,
   fonts: Fonts,
-  logo: logo,
+  logoPrimary: logoPrimary,
+  logoSecondary: logoSecondary,
 };
 
 export default theme;

@@ -7,9 +7,8 @@ import { useEffect, useState } from "react";
 import { Theme } from "../../types";
 
 export const GlobalStyles = () => {
-  const { id, fonts }: Theme = useTheme() as Theme;
+  const { id, fonts, colors }: Theme = useTheme() as Theme;
   const [fontFace, setFontFace] = useState<string>("");
-  console.log(fonts);
 
   const keyFonts: string[] = Object.keys(fonts);
 
@@ -25,22 +24,51 @@ export const GlobalStyles = () => {
   useEffect(() => {
     let fFace = "";
     keyFonts.forEach((key: string) => {
-      console.log(fonts);
       fFace += getFontFace(id, fonts[key]);
     });
-    console.log({ fFace });
     setFontFace(fFace);
   }, []);
   return (
     <Global
       styles={css(`
         html{
-          font-family: Primary
+          font-family: Primary;
+          font-size: 10px;
         }
+
+        body{
+          padding: 0;
+          margin: 0;
+          background: ${colors.bacgroundPrimary}
+        }
+        
+        
+        p, a{
+          font-size: 1.8rem;
+          line-height: 2.1rem;
+          margin: 0;
+        }
+        p.small{
+          font-size: 1.4rem;
+          line-height: 1.6rem;
+          font-weight: 300; 
+        }
+
+
+        a{
+          color: ${colors.error};
+          cursor: pointer;
+        }
+        a:hover{
+          text-shadow: 0 0 ${colors.error};
+        }
+        
+        
         h1{
           font-size: 24px;
           font-weight: bold;
-          line-geight: 28.13px;
+          line-height: 2.8rem;
+          margin: 0;
         }
         ${fontFace}
   `)}

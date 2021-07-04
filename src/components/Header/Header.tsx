@@ -10,9 +10,9 @@ export const Header = (props: HeaderProps) => {
   const styles: SerializedStyles = getStyles(theme);
 
   return (
-    <h1 css={styles}>
-      <img src={theme.logo} />
-      {props.title}
-    </h1>
+    <div css={styles}>
+      <img className="logo" src={theme.logoSecondary} />
+      <h1>{props.title}</h1>
+    </div>
   );
 };

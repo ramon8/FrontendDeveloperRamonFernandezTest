@@ -8,6 +8,6 @@ export default {
 
 export const Header = () => (
   <>
-    <HeaderComponent title="Header title" />
+    <HeaderComponent onTogglerChange={() => {}} title="Header title" />
   </>
 );

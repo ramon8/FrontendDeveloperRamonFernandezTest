@@ -11,6 +11,12 @@ export const Fonts = {
     style: "normal",
     weight: "bold",
   },
+  PrimaryLight: {
+    fontFamily: "Primary",
+    path: "/roboto/Roboto-Light.ttf",
+    style: "normal",
+    weight: "300",
+  },
   PrimaryItalic: {
     fontFamily: "Primary",
     path: "/roboto/Roboto-Italic.ttf",
@@ -22,5 +28,11 @@ export const Fonts = {
     path: "/roboto/Roboto-BoldItalic.ttf",
     style: "italic",
     weight: "bold",
+  },
+  PrimaryLightItalic: {
+    fontFamily: "Primary",
+    path: "/roboto/Roboto-LightItalic.ttf",
+    style: "italic",
+    weight: "300",
   },
 };

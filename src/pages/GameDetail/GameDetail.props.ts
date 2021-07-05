@@ -1,3 +1,4 @@
 export interface GameListProps {
-  kk?: string;
+  id?: string;
+  onTogglerChange?: (e: any) => void;
 }

@@ -5,6 +5,7 @@ const getStyles = (theme: Theme): SerializedStyles =>
   css({
     ".main-container": {
       padding: "1.6rem",
+      height: "100%",
     },
     ".container-game-list": {
       display: "grid",

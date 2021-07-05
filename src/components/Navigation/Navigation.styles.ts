@@ -8,6 +8,7 @@ const getStyles = (theme: Theme): SerializedStyles =>
     gridAutoFlow: "column",
     gridGap: "3rem",
     width: "fit-content",
+    color: theme.colors.primary,
     p: {
       textTransform: "uppercase",
       cursor: "pointer",

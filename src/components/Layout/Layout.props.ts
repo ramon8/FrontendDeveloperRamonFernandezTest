@@ -1,5 +1,7 @@
 import { CommonProps } from "../../types";
 
-export interface CardProps extends CommonProps {
+export interface LayoutProps extends CommonProps {
   title: string;
+  togglerLabel?: string;
+  onTogglerChange?: (e: any) => any;
 }

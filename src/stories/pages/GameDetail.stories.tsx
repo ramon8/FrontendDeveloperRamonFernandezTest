@@ -6,4 +6,4 @@ export default {
   component: GameDetailComponent,
 };
 
-export const GameDetail = () => <GameDetailComponent />;
+export const GameDetail = () => <GameDetailComponent id="Switch Game A" />;

@@ -37,6 +37,7 @@ export const GlobalStyles = () => {
         }
 
         body{
+          color: ${colors.primary}
           padding: 0;
           margin: 0;
           background: ${colors.bacgroundPrimary}

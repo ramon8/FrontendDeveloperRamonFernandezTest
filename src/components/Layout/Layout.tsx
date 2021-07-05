@@ -2,18 +2,18 @@
 /** @jsx jsx */
 import { jsx, SerializedStyles, useTheme } from "@emotion/react";
 import { Theme } from "../../types";
-import { CardProps } from "./Layout.props";
+import { LayoutProps } from "./Layout.props";
 import getStyles from "./Layout.styles";
 
 import { Header } from "../Header";
 
-export const Layout = (props: CardProps) => {
+export const Layout = (props: LayoutProps) => {
   const theme: Theme = useTheme() as Theme;
   const styles: SerializedStyles = getStyles(theme);
 
   return (
     <div css={styles} className={props.className}>
-      <Header title={props.title} />
+      <Header togglerLabel={props.togglerLabel} onTogglerChange={props.onTogglerChange} title={props.title} />
       {props.children}
     </div>
   );

@@ -4,7 +4,8 @@ import { Theme } from "../../types";
 const getStyles = (theme: Theme): SerializedStyles =>
   css({
     maxWidth: "36rem",
-    background: theme.colors.white,
+    background: theme.colors.secondary,
+    color: theme.colors.primary,
     height: "100%",
     borderRadius: ".8rem",
     boxShadow: "0 .4rem .4rem rgba(0, 0, 0, 0.25)",

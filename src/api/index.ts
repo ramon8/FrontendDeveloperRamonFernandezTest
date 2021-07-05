@@ -1,31 +1,35 @@
 import { getRandomNumber } from "../utils";
-import gameListJSON from "./data/games.json";
-import platformsJSON from "./data/platforms.json";
-import { Game, GetGamesResponse, GetPlatformsResponse } from "./model";
+import * as gameListJSON from "./data/games.json";
+import * as platformsJSON from "./data/platforms.json";
+import { Game } from "./model";
 
-const API_RESPONSE_TIME = 0;
-const API_ERROR_RANDOM_RANGE = 10000000;
+const API_RESPONSE_TIME = getRandomNumber(0);
 
 export type Platforms = "all" | "PS4" | "X1" | "PC" | "Switch";
 
 export const getApiInstance = () => {
-  const random = getRandomNumber(API_ERROR_RANDOM_RANGE);
-
-  const GetGames = (platform: Platforms): Promise<GetGamesResponse> =>
-    new Promise((resolve, reject) => {
+  const GetGame = (name: string): Promise<any> =>
+    new Promise((resolve) => {
       setTimeout(() => {
-        const filteredGameList = gameListJSON.games.filter((game: Game) => game.platform === platform);
-        if (!random) reject("Error");
-        else resolve(platform === "all" ? gameListJSON : { games: filteredGameList });
+        const jsonData: any = gameListJSON;
+        const game = jsonData.games.find((g: Game) => g.name === name);
+        resolve(game);
       }, API_RESPONSE_TIME);
     });
-  const GetPlatforms = (): Promise<GetPlatformsResponse> =>
-    new Promise((resolve, reject) => {
+  const GetGames = (platform: Platforms): Promise<any> =>
+    new Promise((resolve) => {
       setTimeout(() => {
-        if (!random) reject("Error");
-        else resolve(platformsJSON);
+        const jsonData: any = gameListJSON;
+        const filteredGameList = jsonData.games.filter((game: Game) => game.platform === platform);
+        resolve(platform === "all" ? jsonData : { games: filteredGameList });
+      }, API_RESPONSE_TIME);
+    });
+  const GetPlatforms = (): Promise<typeof platformsJSON> =>
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(platformsJSON);
       }, API_RESPONSE_TIME);
     });
 
-  return { GetGames, GetPlatforms };
+  return { GetGames, GetPlatforms, GetGame };
 };

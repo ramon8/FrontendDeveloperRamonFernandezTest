@@ -12,7 +12,7 @@ export const Card = (props: CardProps) => {
   const styles: SerializedStyles = getStyles(theme);
 
   return (
-    <div css={styles}>
+    <div css={styles} onClick={props.onClick}>
       <Image className="image" src={props.image} />
       <div className="container-title">
         <p>{props.title}</p>

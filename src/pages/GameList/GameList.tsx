@@ -9,7 +9,9 @@ import { GetPlatformsResponse } from "../../api/model/platorms";
 import { Card, Layout, Navigation } from "../../components";
 import { Theme } from "../../types";
 import { GameListProps } from "./GameList.props";
+import { useHistory } from "react-router-dom";
 import getStyles from "./GameList.styles";
+import { Loader } from "../../components/Loader";
 
 export const GameList = (props: GameListProps) => {
   const { GetGames, GetPlatforms } = getApiInstance();
@@ -17,42 +19,41 @@ export const GameList = (props: GameListProps) => {
   const styles: SerializedStyles = getStyles(theme);
   const [gameList, setGameList] = useState<Game[]>([]);
   const [navItems, setNavItems] = useState<string[]>([]);
+  const [platform, setPlatform] = useState<string>("all");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const history = useHistory();
 
   const onClickCard = (id: string) => {
-    return () => {};
+    return () => {
+      history.push(`/detail/${id}`);
+    };
   };
 
   const getGamesList = (platform: Platforms) => {
-    GetGames(platform).then(
-      (res: GetGamesResponse) => {
-        setGameList(res.games);
-      },
-      (err: string) => {
-        console.log(err);
-      }
-    );
+    setIsLoading(true);
+    GetGames(platform).then((res) => {
+      setGameList(res?.games);
+      setIsLoading(false);
+    });
   };
 
   useEffect(() => {
     getGamesList("all");
 
-    GetPlatforms().then(
-      (res: GetPlatformsResponse) => {
-        console.log(res);
-        setNavItems(platformsAdapter(res.platforms));
-      },
-      (err: string) => {
-        console.log(err);
-      }
-    );
+    GetPlatforms().then((res: any) => {
+      setNavItems(platformsAdapter(res?.platforms));
+    });
   }, []);
 
-  const onClickNavItem = (platform: Platforms) => {
-    getGamesList(platform);
+  const onClickNavItem = (plat: Platforms) => {
+    setGameList([]);
+    setPlatform(plat);
+    getGamesList(plat);
   };
 
   return (
-    <Layout css={styles} title="Game Catalog X1">
+    <Layout css={styles} title={`Game Catalog ${platform.toUpperCase()}`} onTogglerChange={props.onTogglerChange}>
+      {isLoading && <Loader />}
       <div className="main-container">
         <Navigation onClickItem={onClickNavItem} items={navItems} />
         <div className="container-game-list">

@@ -5,7 +5,7 @@ import logoPrimary from "./logoPrimary.svg";
 import logoSecondary from "./logoSecondary.svg";
 
 const theme: Partial<Theme> = {
-  id: "darkTheme",
+  id: "alternative",
   colors: colorTypes,
   fonts: Fonts,
   logoPrimary: logoPrimary,

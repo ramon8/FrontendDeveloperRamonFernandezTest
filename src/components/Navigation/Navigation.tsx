@@ -11,6 +11,10 @@ export const Navigation = (props: NavigationProps) => {
   const styles: SerializedStyles = getStyles(theme);
   const [selected, setSelected] = useState<string>("all");
 
+  /**
+   * OnClick event for each item
+   * @param item the item selected
+   */
   const onClickItem = (item: string) => {
     return () => {
       props.onClickItem && props.onClickItem(item);

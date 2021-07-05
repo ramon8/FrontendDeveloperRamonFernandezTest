@@ -6,6 +6,10 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import { Theme } from "../../types";
 
+/**
+ * This component manage all styles that are global
+ * @returns
+ */
 export const GlobalStyles = () => {
   const { id, fonts, colors }: Theme = useTheme() as Theme;
   const [fontFace, setFontFace] = useState<string>("");

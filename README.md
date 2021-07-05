@@ -22,13 +22,17 @@ To run Storybook simply execute this command on the terminal:
 npm run storybook
 ```
 
+Served in http://localhost:6006/
+
 ## Web
 
-To start the web page run this command on the terminal
+To start the web page run this command on the terminal:
 
 ```bash
 npm run start
 ```
+
+Served in http://localhost:8080/
 
 ## Extras
 

@@ -17,7 +17,7 @@ export const Toggler = (props: TogglerProps) => {
   return (
     <div css={styles}>
       <label className="switch">
-        <input type="checkbox" onChange={onChange} />
+        <input checked={!props.value} onClick={onChange} type="checkbox" onChange={onChange} />
         <span className="slider"></span>
       </label>
     </div>

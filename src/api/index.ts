@@ -5,7 +5,7 @@ import { Game } from "./model";
 
 // This value simulate the time of a real api
 // const API_RESPONSE_TIME = getRandomNumber(1500);
-const API_RESPONSE_TIME = getRandomNumber(0);
+const API_RESPONSE_TIME = getRandomNumber(750);
 
 export type Platforms = "all" | "PS4" | "X1" | "PC" | "Switch";
 

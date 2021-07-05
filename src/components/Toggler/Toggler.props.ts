@@ -5,4 +5,5 @@ export interface TogglerProps {
    * `e.target.checked returns the value of the toggler`
    */
   onChange: (e: any) => any;
+  value: boolean;
 }

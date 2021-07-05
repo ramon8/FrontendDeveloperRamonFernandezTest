@@ -13,4 +13,6 @@ export interface HeaderProps {
    * On change event for the theme toggler
    */
   onTogglerChange: (e: any) => any;
+
+  togglerValue?: boolean;
 }

@@ -52,7 +52,7 @@ export const GameList = (props: GameListProps) => {
   };
 
   return (
-    <Layout css={styles} title={`Game Catalog ${platform.toUpperCase()}`} onTogglerChange={props.onTogglerChange}>
+    <Layout css={styles} title={`Game Catalog ${platform.toUpperCase()}`} togglerValue={props.togglerValue} onTogglerChange={props.onTogglerChange}>
       {isLoading && <Loader />}
       <div className="main-container">
         <Navigation onClickItem={onClickNavItem} items={navItems} />

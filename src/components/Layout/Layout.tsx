@@ -13,7 +13,7 @@ export const Layout = (props: LayoutProps) => {
 
   return (
     <div css={styles} className={props.className}>
-      <Header togglerLabel={props.togglerLabel} onTogglerChange={props.onTogglerChange} title={props.title} />
+      <Header togglerLabel={props.togglerLabel} togglerValue={props.togglerValue} onTogglerChange={props.onTogglerChange} title={props.title} />
       {props.children}
     </div>
   );

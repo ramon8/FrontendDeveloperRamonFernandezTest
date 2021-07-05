@@ -8,6 +8,6 @@ export default {
 
 export const Toggler = () => (
   <>
-    <TogglerComponent onChange={() => {}} />
+    <TogglerComponent value onChange={() => {}} />
   </>
 );

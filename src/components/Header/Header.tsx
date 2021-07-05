@@ -25,7 +25,7 @@ export const Header = (props: HeaderProps) => {
       <h1>{props.title}</h1>
       <div className="toggler-container">
         <p>{props.togglerLabel || "Theme"}</p>
-        <Toggler onChange={props.onTogglerChange} />
+        <Toggler value={props.togglerValue} onChange={props.onTogglerChange} />
       </div>
     </div>
   );

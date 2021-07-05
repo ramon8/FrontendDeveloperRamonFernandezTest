@@ -27,7 +27,7 @@ export const GameDetail = (props: GameListProps) => {
   }, []);
 
   return (
-    <Layout css={styles} title="Game details" onTogglerChange={props.onTogglerChange}>
+    <Layout css={styles} title="Game details" togglerValue={props.togglerValue} onTogglerChange={props.onTogglerChange}>
       {isLoading && <Loader />}
       {game && (
         <div className="main-contaienr">

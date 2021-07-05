@@ -15,4 +15,6 @@ export interface LayoutProps extends CommonProps {
    * On change event for the theme toggler
    */
   onTogglerChange?: (e: any) => any;
+
+  togglerValue?: boolean;
 }

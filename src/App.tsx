@@ -20,13 +20,13 @@ export const App = () => {
       <Router>
         <Switch>
           <Route path="/list">
-            <GameList onTogglerChange={onTogglerChange} />
+            <GameList togglerValue={isThemeLight} onTogglerChange={onTogglerChange} />
           </Route>
           <Route path="/detail/:id">
-            <GameDetail onTogglerChange={onTogglerChange} />
+            <GameDetail togglerValue={isThemeLight} onTogglerChange={onTogglerChange} />
           </Route>
           <Route path="/">
-            <GameList onTogglerChange={onTogglerChange} />
+            <GameList togglerValue={isThemeLight} onTogglerChange={onTogglerChange} />
           </Route>
         </Switch>
       </Router>
